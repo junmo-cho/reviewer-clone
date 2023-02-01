@@ -25,7 +25,10 @@
   color: #ff3478;
 }
 
-.sns_badge {
+.sns_badge li {
+  margin-right: 7px;
+}
+.sns_badge li span {
   display: inline-block;
   border: 1px solid #2ba406;
   color: #2ba406;

@@ -31,6 +31,10 @@
   border-left: 1px solid #eee;
 }
 
+.right_info {
+  width: calc(100% - 1.75rem);
+}
+
 .review_step li em {
   position: relative;
   width: 6.875rem;
@@ -72,4 +76,40 @@
   font-size: 1.125rem;
   text-align: left;
   background: url("../../public/img/zzim.png") 82% 50%/28px no-repeat;
+}
+
+.detail_slide .slick-slide {
+  padding-right: 10px;
+}
+
+.detail_slide .slick-prev,
+.detail_slide .slick-next {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #efefef;
+  top: -20px;
+}
+
+.detail_slide .slick-prev {
+  left: 1380px;
+}
+
+.detail_slide .slick-next {
+  right: -25px;
+}
+
+.detail_slide .slick-prev::before,
+.detail_slide .slick-next::before {
+  width: 13px;
+  height: 13px;
+}
+
+.detail_slide .slick-prev::before {
+  background: url("../../public/img/pre_bo.png") center no-repeat;
+  background-size: contain;
+}
+
+.detail_slide .slick-next::before {
+  background: url("../../public/img/nex_bo.png") center no-repeat;
+  background-size: contain;
 }

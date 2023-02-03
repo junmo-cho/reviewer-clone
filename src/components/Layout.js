@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 const Layout = () => {
   return (
@@ -18,7 +18,9 @@ const Layout = () => {
           <div className="container mx-auto h-full flex justify-between items-center">
             <div className="left-menu flex items-center">
               <h1 className="logo">
-                <img src="../img/logo.png" />
+                <Link to="/">
+                  <img src="../img/logo.png" />
+                </Link>
               </h1>
               <ul className="h-full flex items-center text-lg">
                 <li className="relative p-2.5 ml-5 hover:text-rose-500 cursor-pointer">지역</li>

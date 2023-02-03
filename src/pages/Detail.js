@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
+import Slider from "react-slick";
 import { campaign } from "../mock";
 import "./Detail.css";
 
@@ -14,6 +15,37 @@ const Detail = () => {
   const onClickDrop = () => {
     setDropBtn((prev) => !prev);
   }
+
+  const targetRef = useRef(null);
+  const handleScroll = () => {
+    // console.log(window.scrollY);
+
+    if(window.scrollY > 103) {
+      targetRef.current.style.position = "fixed";
+      targetRef.current.style.top = "0";
+      targetRef.current.style.width = "311px";
+    }else{
+      targetRef.current.style = ""
+    }
+  };
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      window.addEventListener("scroll", handleScroll);
+    }, 100);
+    return () => {
+      clearInterval(timer);
+      window.addEventListener("scroll", handleScroll);
+    }
+  }, []);
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+  };
 
   return (
     <div className="container mx-auto">
@@ -33,35 +65,33 @@ const Detail = () => {
           <div className={`mt-10 ${dropBtn ? "" : "drop_down_hidden"}`}>
             <img src={campaignDetail.detailPageUrl} />
           </div>
-          <div>
           <button className="drop_down_btn border border-gray-300 py-3.5 m-2.5" onClick={onClickDrop}>{dropBtn ? "- 화면 접기" : "+ 더보기"}</button>
+          <div className="h-28 border-b border-gray-300 flex py-8">
+            <span className=" w-40 text-lg">제공내역</span>
+            <span className="text-base text-gray-500">{campaignDetail.provisionDetails}</span>
           </div>
-          <div className="py-8">
-            <span className="text-lg">제공내역</span>
-            <span className="text-base">{campaignDetail.provisionDetails}</span>
-          </div>
-          <div className="py-8">
-            <div>
-              <span className="text-lg">키워드</span>
-              <span className="text-base">{campaignDetail.keywords}</span>
+          <div className="h-28 border-b border-gray-300 py-8">
+            <div className="flex">
+              <span className=" w-40 text-lg">키워드</span>
+              <span className="text-base text-gray-500">{campaignDetail.keywords}</span>
             </div>
             <button>키워드 복사</button>
           </div>
-          <div className="py-8">
-            <span className="text-lg">가이드라인</span>
+          <div className="h-32 border-b border-gray-300 flex py-8">
+            <span className=" w-40 text-lg">가이드라인</span>
             <ul>
               {campaignDetail.notification.map((n, i) => (
-                <li key={i} className="text-base">{n}</li>
+                <li key={i} className="text-base text-gray-500">{n}</li>
               ))}
             </ul>
           </div>
-          <div className="py-8">
-            <span className="text-lg">리뷰어 주의사항</span>
-            <span className="text-base">{campaignDetail.notificationAdd}</span>
+          <div className="h-28 flex py-8">
+            <span className=" w-40 text-lg">리뷰어 주의사항</span>
+            <span className="text-base text-gray-500">{campaignDetail.notificationAdd}</span>
           </div>
         </div>
-        <div className="right_contents py-2.5 px-3.5">
-          <div>
+        <div className="right_contents py-2.5 px-3.5 relative">
+          <div ref={targetRef} className="right_info absolute top-4">
             <h4 className="text-lg">{campaignDetail.title}</h4>
             <span className="text-sm mt-2.5 block text-gray-500">{campaignDetail.description}</span>
             <div className="sns_badge badge-blog">
@@ -126,6 +156,36 @@ const Detail = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className="border-t border-gray-200 pt-5">
+        <h3 className="text-2xl font-medium mb-2.5">
+          <b className="txt_point_color">이런 </b> 
+          캠페인 어때요?
+        </h3>
+        <section className="detail_slide">
+          <div className="container mx-auto">
+            <Slider {...settings}>
+              <div>
+                <img className="rounded-md" src={campaignDetail.thumbnailUrl} />
+              </div>
+              <div>
+                <img className="rounded-md" src={campaignDetail.thumbnailUrl} />
+              </div>
+              <div>
+                <img className="rounded-md" src={campaignDetail.thumbnailUrl} />
+              </div>
+              <div>
+                <img className="rounded-md" src={campaignDetail.thumbnailUrl} />
+              </div>
+              <div>
+                <img className="rounded-md" src={campaignDetail.thumbnailUrl} />
+              </div>
+              <div>
+                <img className="rounded-md" src={campaignDetail.thumbnailUrl} />
+              </div>
+            </Slider>
+          </div>
+        </section>
       </div>
     </div>
   );

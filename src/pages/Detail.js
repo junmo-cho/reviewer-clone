@@ -157,7 +157,7 @@ const Detail = () => {
           </div>
         </div>
       </div>
-      <div className="border-t border-gray-200 pt-5">
+      <div className="border-t border-gray-200 py-10">
         <h3 className="text-2xl font-medium mb-2.5">
           <b className="txt_point_color">이런 </b> 
           캠페인 어때요?
@@ -167,21 +167,39 @@ const Detail = () => {
             <Slider {...settings}>
               <div>
                 <img className="rounded-md" src={campaignDetail.thumbnailUrl} />
+                <span className="text-sm block mt-2.5">D-Day 297</span>
+                <span className="text-base">{campaignDetail.title}</span>
+                <p className="text-xs text-gray-400">{campaignDetail.description}</p>
               </div>
               <div>
                 <img className="rounded-md" src={campaignDetail.thumbnailUrl} />
+                <span className="text-sm block mt-2.5">D-Day 297</span>
+                <span className="text-base">{campaignDetail.title}</span>
+                <p className="text-xs text-gray-400">{campaignDetail.description}</p>
               </div>
               <div>
                 <img className="rounded-md" src={campaignDetail.thumbnailUrl} />
+                <span className="text-sm block mt-2.5">D-Day 297</span>
+                <span className="text-base">{campaignDetail.title}</span>
+                <p className="text-xs text-gray-400">{campaignDetail.description}</p>
               </div>
               <div>
                 <img className="rounded-md" src={campaignDetail.thumbnailUrl} />
+                <span className="text-sm block mt-2.5">D-Day 297</span>
+                <span className="text-base">{campaignDetail.title}</span>
+                <p className="text-xs text-gray-400">{campaignDetail.description}</p>
               </div>
               <div>
                 <img className="rounded-md" src={campaignDetail.thumbnailUrl} />
+                <span className="text-sm block mt-2.5">D-Day 297</span>
+                <span className="text-base">{campaignDetail.title}</span>
+                <p className="text-xs text-gray-400">{campaignDetail.description}</p>
               </div>
               <div>
                 <img className="rounded-md" src={campaignDetail.thumbnailUrl} />
+                <span className="text-sm block mt-2.5">D-Day 297</span>
+                <span className="text-base">{campaignDetail.title}</span>
+                <p className="text-xs text-gray-400">{campaignDetail.description}</p>
               </div>
             </Slider>
           </div>

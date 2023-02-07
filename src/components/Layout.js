@@ -37,6 +37,28 @@ const Layout = () => {
       </header>
 
       <Outlet />
+
+      <footer className="w-full" style={{ backgroundColor: "#373737" }}>
+        <div className="border-b border-gray-300">
+          <div className="container mx-auto">
+            <ul className="flex text-gray-400 text-sm py-6">
+              <li className="mx-2.5">회사소개</li>
+              <span className="ft_line"></span>
+              <li className="mx-2.5">입점/제휴문의</li>
+              <span className="ft_line"></span>
+              <li className="mx-2.5">이용약관</li>
+              <span className="ft_line"></span>
+              <li className="mx-2.5"><b className="text-white">개인정보처리방침</b></li>
+              <span className="ft_line"></span>
+              <li className="mx-2.5">청소년 보호정책</li>
+              <span className="ft_line"></span>
+            </ul>
+          </div>
+        </div>
+        <div className="container mx-auto py-8">
+          
+        </div>
+      </footer>
     </>
   );
 }

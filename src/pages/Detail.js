@@ -23,9 +23,22 @@ const Detail = () => {
     if(window.scrollY > 103) {
       targetRef.current.style.position = "fixed";
       targetRef.current.style.top = "0";
+      targetRef.current.style.bottom = "auto";
       targetRef.current.style.width = "311px";
     }else{
-      targetRef.current.style = ""
+      targetRef.current.style.removeProperty("position");
+      targetRef.current.style.removeProperty("top");
+      targetRef.current.style.removeProperty("bottom");
+      targetRef.current.style.removeProperty("width");
+    }
+
+    if(window.scrollY > 1176) {
+      targetRef.current.style.position = "absolute";
+      targetRef.current.style.top = "auto";
+      targetRef.current.style.bottom = "0";
+      targetRef.current.style.width = "311px";
+    }else{
+
     }
   };
 

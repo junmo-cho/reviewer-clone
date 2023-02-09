@@ -1,4 +1,6 @@
+import { useRef, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
+import Menu from "./Menu";
 
 const Layout = () => {
   return (
@@ -16,16 +18,17 @@ const Layout = () => {
         </div>
         <div className="header-nav border-solid border-b border-gray-200">
           <div className="container mx-auto h-full flex justify-between items-center">
-            <div className="left-menu flex items-center">
+            <div className="left-menu flex items-center h-full">
               <h1 className="logo">
                 <Link to="/">
                   <img src="../img/logo.png" />
                 </Link>
               </h1>
               <ul className="h-full flex items-center text-lg">
-                <li className="relative p-2.5 ml-5 cursor-pointer text-center">
-                  <Link to="/" className="hover:text-rose-500">구매평</Link>
-                  <div className="gnb_sub_menu absolute left-1/2 top-14 bg-current w-full opacity-40" style={{ transform: "translate(-50%)", minWidth: "100px" }}>
+                <Menu />
+                {/* <li className="relative p-2.5 ml-5 cursor-pointer text-center">
+                  <Link to="/" onMouseEnter={() => setMenuOn(true)} onMouseLeave={() => setMenuOn(false)} className="gnb_menu hover:text-rose-500">구매평</Link>
+                  <div className={`gnb_sub_menu absolute left-1/2 top-14 w-full bg-white border border-gray-200 ${menuOn ? "on" : ""}`} style={{ transform: "translate(-50%)", minWidth: "100px" }}>
                     <ul>
                       <li><Link to="/">전체</Link></li>
                       <li><Link to="/">식품</Link></li>
@@ -43,8 +46,8 @@ const Layout = () => {
                   </div>
                 </li>
                 <li className="relative p-2.5 ml-5 cursor-pointer text-center">
-                  <Link to="/" className="hover:text-rose-500">구매평 + 리뷰</Link>
-                  <div className="gnb_sub_menu absolute left-1/2 top-14 w-full bg-white" style={{ transform: "translate(-50%)", minWidth: "100px" }}>
+                  <Link to="/" onMouseEnter={() => setMenuOn(true)} onMouseLeave={() => setMenuOn(false)} className="gnb_menu hover:text-rose-500">구매평 + 리뷰</Link>
+                  <div className={`gnb_sub_menu absolute left-1/2 top-14 w-full bg-white border border-gray-200 ${menuOn ? "on" : ""}`} style={{ transform: "translate(-50%)", minWidth: "100px" }}>
                     <ul>
                       <li><Link to="/">전체</Link></li>
                       <li><Link to="/">식품</Link></li>
@@ -60,7 +63,7 @@ const Layout = () => {
                       <li><Link to="/">기타</Link></li>
                     </ul>
                   </div>
-                </li>
+                </li> */}
               </ul>
             </div>
             <div className="search-btn">

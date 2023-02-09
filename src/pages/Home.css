@@ -82,3 +82,44 @@
 .slick-prev::before {
   background: url("../../public/img/prebtn.png");
 }
+
+
+.ft_line {
+  display: inline-block;
+  width: 1px;
+  height: 12px;
+  background: #454545;
+  margin-top: 5px;
+}
+
+
+
+/* Layout style */
+.gnb_sub_menu::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: -5px;
+  width: 100%;
+  height: 5px;
+  background: url("../../public/img/sub_arrow.png") center no-repeat;
+}
+
+.gnb_sub_menu {
+  display: none;
+  transform: translateX(-50%);
+  min-width: 120px;
+}
+
+/* .gnb_sub_menu.on {
+  display: block;
+} */
+
+.gnb_sub_menu li:hover a {
+  color: #ff3478;
+}
+
+.gnb_menu:hover .gnb_sub_menu {
+  display: block;
+}

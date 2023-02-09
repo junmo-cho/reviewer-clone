@@ -113,11 +113,3 @@
   background: url("../../public/img/nex_bo.png") center right no-repeat;
   background-size: contain;
 }
-
-.ft_line {
-  display: inline-block;
-  width: 1px;
-  height: 12px;
-  background: #454545;
-  margin-top: 5px;
-}

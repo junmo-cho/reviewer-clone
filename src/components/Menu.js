@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { menu } from "../mock";
+import { campaign, menu } from "../mock";
 
 const Menu = () => {
   // const [menuOn, setMenuOn] = useState({
@@ -14,11 +14,19 @@ const Menu = () => {
   //   setMenuOn(stateChange)
   // };
 
+  const [categoryItem, setCategoryItem] = useState("전체");
+
+  // useEffect(() => {
+  //   const cc = campaign.campaignList.filter((c) => c.category);
+  //   setCategoryItem(cc);
+  //   console.log(categoryItem);
+  // }, []);
+
   return (
     <>
     {menu.mainMenu.map((m, i) => (
       <li key={i} className="gnb_menu relative flex items-center p-2.5 ml-5 cursor-pointer text-center h-full">
-        <Link to="/"className="hover:text-rose-500">
+        <Link to={`subpage/${categoryItem}`} className="hover:text-rose-500">
           {m}
         </Link>
         <div className={`gnb_sub_menu absolute left-1/2 top-16 w-full bg-white border border-gray-200 rounded py-2.5 px-6`}>

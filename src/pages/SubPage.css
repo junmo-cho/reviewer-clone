@@ -1,0 +1,19 @@
+.sns_platform li {
+  position: relative;
+  padding: 5px 18px 5px 15px;
+}
+
+.sns_platform li::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 1px;
+  height: 12px;
+  transform: translateY(-50%);
+  background: #ccc;
+}
+.sns_platform li:last-child:after {
+  display: none;
+}

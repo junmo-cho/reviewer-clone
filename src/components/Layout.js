@@ -9,9 +9,10 @@ const Layout = () => {
         <div className="top-header h-9 border-solid border-b border-gray-200">
           <div className="container mx-auto h-full">
             <ul className="h-full flex justify-end items-center text-xs">
-              <li className="relative py-2.5 px-3.5">커뮤니티</li>
               <li className="relative py-2.5 px-3.5">고객센터</li>
-              <li className="relative py-2.5 px-3.5">로그인</li>
+              <li className="relative py-2.5 px-3.5">
+                <Link to="/login">로그인</Link>
+              </li>
               <li className="relative py-2.5 px-3.5">회원가입</li>
             </ul>
           </div>

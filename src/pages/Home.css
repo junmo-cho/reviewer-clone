@@ -24,6 +24,9 @@
 .txt_point_color {
   color: #ff3478;
 }
+.bg_point_color {
+  background-color: #ff3478;
+}
 
 .sns_badge li {
   margin-right: 7px;

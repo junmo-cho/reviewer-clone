@@ -7,6 +7,7 @@
   background: #f9f9f9;
   height: 3.125rem;
   box-sizing: border-box;
+  color: #ccc;
 }
 
 .login_box > ul > li:first-child {
@@ -16,6 +17,7 @@
 .login_box > ul > li.on {
   background: #fff;
   border-bottom: 0;
+  color: #000;
 }
 
 .login_box > ul > li::before {

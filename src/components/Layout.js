@@ -13,7 +13,9 @@ const Layout = () => {
               <li className="relative py-2.5 px-3.5">
                 <Link to="/login">로그인</Link>
               </li>
-              <li className="relative py-2.5 px-3.5">회원가입</li>
+              <li className="relative py-2.5 px-3.5">
+                <Link to="/signup">회원가입</Link>
+              </li>
             </ul>
           </div>
         </div>

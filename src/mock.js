@@ -557,3 +557,66 @@ export const menu = {
   mainMenu: ["구매평", "구매평 + 리뷰"],
   subMenu: ["전체", "식품", "생활", "뷰티", "패션", "유아동", "반려동물", "디지털", "운동 건강", "레저 스포츠", "인테리어", "기타"]
 }
+
+export const faq = {
+  faqTab: [
+    {
+      name: "전체",
+      value: "all"
+    },
+    {
+      name: "이용안내",
+      value: "information"
+    },
+    {
+      name: "캠페인 신청",
+      value: "campainApply"
+    },
+    {
+      name: "캠페인 취소",
+      value: "campainCancel"
+    },
+    {
+      name: "캠페인 선정",
+      value: "campainSelect"
+    },
+    {
+      name: "리뷰 등록",
+      value: "reviewRegistration"
+    },
+    {
+      name: "포인트",
+      value: "point"
+    },
+    {
+      name: "SNS 연결",
+      value: "sns"
+    },
+    {
+      name: "개인정보",
+      value: "info"
+    },
+    {
+      name: "페널티",
+      value: "penalty"
+    },
+    {
+      name: "기타",
+      value: "etc"
+    },
+  ],
+  faqContents: [
+    {
+      question: ["리뷰어 선정 메일을 못 받았습니다."],
+      answer: [`리뷰어 선정 시, 알림톡 또는 문자 발송과 함께 선정 안내 메일로 안내해드리고 있습니다. <br /> 
+      선정 메일을 받지 못한 경우, [마이페이지-개인정보 수정]에서 <이메일 및 SMS/전화를 통한 정보수신에 동의합니다.> 부분에 체크가 되었는지 확인해주세요.`],
+      category: "information"
+    },
+    {
+      question: ["리뷰어 발표 후, 캠페인 취소는 어떻게 하나요?"],
+      answer: [`리뷰어 선정 시, 알림톡 또는 문자 발송과 함께 선정 안내 메일로 안내해드리고 있습니다. <br /> 
+      선정 메일을 받지 못한 경우, [마이페이지-개인정보 수정]에서 <이메일 및 SMS/전화를 통한 정보수신에 동의합니다.> 부분에 체크가 되었는지 확인해주세요.`],
+      category: "campainApply"
+    }
+  ]
+}

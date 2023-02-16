@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout";
 import ServiceLayout from "./components/ServiceLayout";
 import Detail from "./pages/Detail";
+import Faq from "./pages/Faq";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
@@ -18,7 +19,9 @@ function App() {
           <Route path="/signup" element={ <SignUp /> } />
           <Route index element={ <Home /> } />
           <Route path="/servicecenter" element={<ServiceLayout />}>
-            <Route path="/servicecenter/:centerMenu" element={ <Home /> } />
+            <Route path="/servicecenter/faq" element={ <Faq /> } />
+            <Route path="/servicecenter/inquiry" element={ <Faq /> } />
+            <Route path="/servicecenter/terms" element={ <Faq /> } />
           </Route>
         </Route>
       </Routes>

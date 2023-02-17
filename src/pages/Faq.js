@@ -15,7 +15,7 @@ const Faq = () => {
         return false;
       })
     );
-  }, []);
+  }, [category]);
 
   return (
     <>

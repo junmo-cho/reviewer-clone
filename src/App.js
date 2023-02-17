@@ -4,6 +4,7 @@ import ServiceLayout from "./components/ServiceLayout";
 import Detail from "./pages/Detail";
 import Faq from "./pages/Faq";
 import Home from "./pages/Home";
+import Inquiry from "./pages/Inquiry";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import SubPage from "./pages/SubPage";
@@ -20,7 +21,7 @@ function App() {
           <Route index element={ <Home /> } />
           <Route path="/servicecenter" element={<ServiceLayout />}>
             <Route path="/servicecenter/faq" element={ <Faq /> } />
-            <Route path="/servicecenter/inquiry" element={ <Faq /> } />
+            <Route path="/servicecenter/inquiry" element={ <Inquiry /> } />
             <Route path="/servicecenter/terms" element={ <Faq /> } />
           </Route>
         </Route>

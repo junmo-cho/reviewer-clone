@@ -75,12 +75,15 @@ const Inquiry = () => {
             {/* <input className="w-2/12 p-1.5 border border-gray-300 text-sm" /> */}
           </div>
         </div>
-        <div className="flex justify-between border-b border-gray-200 p-5">
-          <div className="">
+        <div className="flex justify-between border-b border-gray-200 py-2.5 px-5">
+          <div className="flex items-center">
             <input type="checkbox" />
-            <span> 개인정보 수집, 이용에 동의합니다</span>
+            <span className="text-sm ml-3.5 text-gray-500"> 개인정보 수집, 이용에 동의합니다</span>
           </div>
-          <button>수집동의 약관보기</button>
+          <button className="border border-gray-300 text-sm p-2.5 bg-gray-50">수집동의 약관보기</button>
+        </div>
+        <div className="flex justify-center py-5">
+          <button className="py-3.5 px-12 bg-gray-500 text-white">문의하기</button>
         </div>
       </form>
     </>

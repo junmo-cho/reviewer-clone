@@ -100,7 +100,7 @@ const Layout = () => {
         <div className="container mx-auto flex justify-between py-8">
           <div className="text-xs text-gray-400">
             <h1 className="ft_logo mb-2.5">
-              <img src="../img/logo.png" />
+              <img src="../img/flogo.png" />
             </h1>
             <p>대표자:정석 <span className="mx-2.5">|</span> 상호:마이비지니스파트너 주식회사</p>
             <p>사업자등록번호:707-87-02696<span className="mx-2.5">|</span>통신판매업신고:2023-경기광명-0080</p>

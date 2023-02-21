@@ -22,10 +22,10 @@
 }
 
 .txt_point_color {
-  color: #ff3478;
+  color: #a694c7;
 }
 .bg_point_color {
-  background-color: #ff3478;
+  background-color: #a694c7;
 }
 
 .sns_badge li {
@@ -119,8 +119,12 @@
   display: block;
 } */
 
+.gnb_menu > a:hover {
+  color: #a694c7;
+}
+
 .gnb_sub_menu li:hover a {
-  color: #ff3478;
+  color: #a694c7;
 }
 
 .gnb_menu:hover .gnb_sub_menu {

@@ -554,7 +554,7 @@ export const campaign = {
 }
 
 export const menu = {
-  mainMenu: ["구매평", "구매평 + 리뷰"],
+  mainMenu: ["구매후기", "구매후기 + SNS"],
   subMenu: ["전체", "식품", "생활", "뷰티", "패션", "유아동", "반려동물", "디지털", "운동 건강", "레저 스포츠", "인테리어", "기타"]
 }
 

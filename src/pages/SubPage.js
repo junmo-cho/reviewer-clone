@@ -5,12 +5,20 @@ import "./SubPage.css";
 
 const SubPage = () => {
   const { category } = useParams();
-  const [paramsState, setParamsState] = useState([]);
+  const [currentTab, setCurrentTab] = useState(0);
+  const [categoryList, setCategoryList] = useState(campaign.campaignList);
 
   useEffect(() => {
-    const categoryFilter = campaign.campaignList.filter((c) => c.category === category);
+    setCategoryList(
+      campaign.campaignList.filter((c) => {
+        if(category === "전체") return true;
+        if(category === c.category) return true;
+        return false;
+      })
+    );
 
-    setParamsState(categoryFilter);
+    // const categoryFilter = campaign.campaignList.filter((c) => c.category === category);
+    // setParamsState(categoryFilter);
   }, [category]);
 
   return (
@@ -18,7 +26,7 @@ const SubPage = () => {
       <div className="border-b border-gray-300 mt-8">
         <ul className="flex">
           {menu.subMenu.map((s, i) => (
-            <li key={i} className="pr-5 pb-1 text-gray-500">
+            <li key={i} onClick={() => setCurrentTab(i)} className={`${i === currentTab ? "on" : ""} submenu_tab relative mr-5 mb-1 text-gray-500`}>
               <Link to={`/subpage/${s}`}>{s}</Link>
             </li>
           ))}
@@ -37,84 +45,41 @@ const SubPage = () => {
       </div>
       <div>
         <ul className="flex flex-wrap">
-          {paramsState ? (
-            <>
-              {paramsState.map((campaign, index) => (
-                <li key={campaign.id} className="w-1/5 pr-4 pt-5">
-                  <Link to={`/detail/${campaign.id}`}>
-                    <img className="rounded-md" src={campaign.thumbnailUrl} />
-                    <div className="sns_badge badge-blog">
-                      <ul className="flex">
-                        {campaign.snsNames.map((sns, i) => (
-                          <li key={i}>
-                            <span>{sns}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <span className="text-lg block mb-1.5">{campaign.title}</span>
-                    <span className="text-xs text-gray-400">{campaign.description}</span>
-                    <div className="flex justify-between text-xs mt-6">
-                      <div className="flex items-center">
-                        <img src="../../img/txt_ico.png" />
-                        <b className="txt_point_color font-medium ml-1">{campaign.apply}</b>명 신청/<b className="txt_point_color font-medium">{campaign.recruits}</b>명 모집중
-                      </div>
-                      <div className="flex items-center">
-                        <img src="../../img/pen_ico.png" />
-                        <b className="txt_point_color font-medium ml-1">{campaign.review}</b>개의 리뷰
-                      </div>
-                    </div>
-                    <div className="badge_additional mt-3.5">
-                      <ul className="flex items-center text-xs">
-                        {campaign.optionList.map((option, i) => (
-                          <li key={i}>{option}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  </Link>
-                </li>
-              ))}
-            </>
-          ) : (
-            <>
-              {campaign.campaignList.slice(0, 20).map((campaign, index) => (
-                <li key={campaign.id} className="w-1/5 pr-4 pt-5">
-                  <Link to={`/detail/${campaign.id}`}>
-                    <img className="rounded-md" src={campaign.thumbnailUrl} />
-                    <div className="sns_badge badge-blog">
-                      <ul className="flex">
-                        {campaign.snsNames.map((sns, i) => (
-                          <li key={i}>
-                            <span>{sns}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <span className="text-lg block mb-1.5">{campaign.title}</span>
-                    <span className="text-xs text-gray-400">{campaign.description}</span>
-                    <div className="flex justify-between text-xs mt-6">
-                      <div className="flex items-center">
-                        <img src="../../img/txt_ico.png" />
-                        <b className="txt_point_color font-medium ml-1">{campaign.apply}</b>명 신청/<b className="txt_point_color font-medium">{campaign.recruits}</b>명 모집중
-                      </div>
-                      <div className="flex items-center">
-                        <img src="../../img/pen_ico.png" />
-                        <b className="txt_point_color font-medium ml-1">{campaign.review}</b>개의 리뷰
-                      </div>
-                    </div>
-                    <div className="badge_additional mt-3.5">
-                      <ul className="flex items-center text-xs">
-                        {campaign.optionList.map((option, i) => (
-                          <li key={i}>{option}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  </Link>
-                </li>
-              ))}
-            </>
-          )}
-
+          {categoryList.map((campaign, index) => (
+            <li key={campaign.id} className="w-1/5 pr-4 pt-5">
+              <Link to={`/detail/${campaign.id}`}>
+                <img className="rounded-md" src={campaign.thumbnailUrl} />
+                <div className="sns_badge badge-blog">
+                  <ul className="flex">
+                    {campaign.snsNames.map((sns, i) => (
+                      <li key={i}>
+                        <span>{sns}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <span className="text-lg block mb-1.5">{campaign.title}</span>
+                <span className="text-xs text-gray-400">{campaign.description}</span>
+                <div className="flex justify-between text-xs mt-6">
+                  <div className="flex items-center">
+                    <img src="../../img/txt_ico.png" />
+                    <b className="txt_point_color font-medium ml-1">{campaign.apply}</b>명 신청/<b className="txt_point_color font-medium">{campaign.recruits}</b>명 모집중
+                  </div>
+                  <div className="flex items-center">
+                    <img src="../../img/pen_ico.png" />
+                    <b className="txt_point_color font-medium ml-1">{campaign.review}</b>개의 리뷰
+                  </div>
+                </div>
+                <div className="badge_additional mt-3.5">
+                  <ul className="flex items-center text-xs">
+                    {campaign.optionList.map((option, i) => (
+                      <li key={i}>{option}</li>
+                    ))}
+                  </ul>
+                </div>
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
     </div>

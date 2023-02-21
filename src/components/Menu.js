@@ -26,13 +26,13 @@ const Menu = () => {
     <>
     {menu.mainMenu.map((m, i) => (
       <li key={i} className="gnb_menu relative flex items-center p-2.5 ml-5 cursor-pointer text-center h-full">
-        <Link to={`subpage/${categoryItem}`} className="hover:text-rose-500">
+        <Link to={`subpage/${categoryItem}`} className="hover:text-violet-300">
           {m}
         </Link>
-        <div className={`gnb_sub_menu absolute left-1/2 top-16 w-full bg-white border border-gray-200 rounded py-2.5 px-6`}>
+        <div className={`gnb_sub_menu absolute z-50 left-1/2 top-16 w-full bg-white border border-gray-200 rounded py-2.5 px-6`}>
           <ul>
             {menu.subMenu.map((sm, i) => (
-              <li key={i} className="text-sm text-left mb-2"><Link to="/">{sm}</Link></li>
+              <li key={i} className="text-sm text-left mb-2"><Link to={`subpage/${sm}`}>{sm}</Link></li>
             ))}
           </ul>
         </div>
